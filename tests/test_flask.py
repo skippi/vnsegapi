@@ -30,3 +30,9 @@ def test_tokenize_get_given_two_words_each_as_tokens(client):
     res = client.get(f'/{quote("táo cao")}')
     get_result = json.loads(res.data)
     assert get_result['tokens'] == ['táo', 'cao']
+
+
+def test_tokenize_get_given_many_words_three_tokens(client):
+    res = client.get(f'/{quote("Đây là từ điển")}')
+    get_result = json.loads(res.data)
+    assert get_result['tokens'] == ['Đây', 'là', 'từ điển']

@@ -7,6 +7,7 @@ authors = ["Justin <jbtcao@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 flask = "^1.0"
+pyvi = "^0.0.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
