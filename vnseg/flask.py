@@ -9,5 +9,5 @@ def make_app(test_config=None) -> Flask:
 
 
 def _tokenize_get(sentence: str = '') -> str:
-    tokens = [] if not sentence else [sentence]
+    tokens = [] if not sentence else sentence.split()
     return jsonify({'tokens': tokens})
