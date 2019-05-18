@@ -36,3 +36,9 @@ def test_tokenize_get_given_many_words_three_tokens(client):
     res = client.get(f'/{quote("Đây là từ điển")}')
     get_result = json.loads(res.data)
     assert get_result['tokens'] == ['Đây', 'là', 'từ điển']
+
+
+def test_tokenize_get_handles_periods(client):
+    res = client.get(f'/{quote("Chào mẹ.")}')
+    get_result = json.loads(res.data)
+    assert get_result['tokens'] == ['Chào', 'mẹ', '.']
