@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify
 
 def make_app(test_config=None) -> Flask:
     app = Flask(__name__)
-    app.route('/tokenize/')(_tokenize_get)
-    app.route('/tokenize/<string:sentence>')(_tokenize_get)
+    app.route('/')(_tokenize_get)
+    app.route('/<string:sentence>')(_tokenize_get)
     return app
 
 

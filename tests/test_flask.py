@@ -15,12 +15,12 @@ def client():
 
 
 def test_tokenize_get_given_empty_sentence(client):
-    res = client.get('/tokenize/')
+    res = client.get('/')
     get_result = json.loads(res.data)
     assert get_result['tokens'] == []
 
 
 def test_tokenize_get_given_one_word_sentence(client):
-    res = client.get(f'/tokenize/{quote("táo")}')
+    res = client.get(f'/{quote("táo")}')
     get_result = json.loads(res.data)
     assert get_result['tokens'] == ['táo']
