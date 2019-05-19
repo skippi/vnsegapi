@@ -1,18 +1,18 @@
 from typing import List
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 from pyvi import ViTokenizer
 
 
 def make_app(test_config=None) -> Flask:
     app = Flask(__name__)
-    app.route('/')(_endpoint_tokenize_get)
-    app.route('/<string:sentence>')(_endpoint_tokenize_get)
+    app.route('/api/tokenize')(_api_tokenize)
     return app
 
 
-def _endpoint_tokenize_get(sentence: str = '') -> str:
-    tokens = [] if not sentence else _tokenize(sentence)
+def _api_tokenize() -> str:
+    string = request.args['str']
+    tokens = [] if not string else _tokenize(string)
     return jsonify({'tokens': tokens})
 
 
