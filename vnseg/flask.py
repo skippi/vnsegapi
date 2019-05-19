@@ -6,11 +6,11 @@ from pyvi import ViTokenizer
 
 def make_app(test_config=None) -> Flask:
     app = Flask(__name__)
-    app.route('/api/tokenize')(_api_tokenize)
+    app.route('/api/tokens')(_api_tokens)
     return app
 
 
-def _api_tokenize() -> str:
+def _api_tokens() -> str:
     string = request.args['str']
     tokens = [] if not string else _tokenize(string)
     return jsonify({'tokens': tokens})
