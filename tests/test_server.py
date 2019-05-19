@@ -2,7 +2,7 @@ import json
 from urllib.parse import quote
 
 import pytest
-from vnseg.flask import make_app
+from vnseg.server import make_app
 
 
 _test_app = make_app()
