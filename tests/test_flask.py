@@ -42,3 +42,8 @@ def test_tokenize_handles_periods(client):
     res = client.get(f'/api/tokenize?str={quote("Chào mẹ.")}')
     get_result = json.loads(res.data)
     assert get_result['tokens'] == ['Chào', 'mẹ', '.']
+
+
+def test_tokenize_returns_status_400_given_no_str(client):
+    res = client.get(f'/api/tokenize')
+    assert res.status_code == 400

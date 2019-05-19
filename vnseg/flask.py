@@ -1,6 +1,6 @@
 from typing import List
 
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify
 from pyvi import ViTokenizer
 
 
