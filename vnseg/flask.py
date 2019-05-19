@@ -13,7 +13,7 @@ def make_app(test_config=None) -> Flask:
 def _api_tokens() -> str:
     string = request.args['str']
     tokens = [] if not string else _tokenize(string)
-    return jsonify({'tokens': tokens})
+    return jsonify(tokens)
 
 
 def _tokenize(sentence: str) -> List[str]:
