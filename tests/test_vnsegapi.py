@@ -1,4 +1,4 @@
-from vnseg import __version__
+from vnsegapi import __version__
 
 
 def test_version():

@@ -11,4 +11,4 @@ RUN poetry install --no-interaction
 RUN poetry shell
 COPY . /app
 
-CMD ["waitress-serve", "--port", "5000", "--call", "vnseg.server:make_app"]
+CMD ["waitress-serve", "--port", "5000", "--call", "vnsegapi.server:make_app"]
