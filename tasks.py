@@ -5,3 +5,8 @@ from vnsegapi.server import make_app
 def dev(ctx):
     app = make_app()
     app.run()
+
+@task
+def docker_dev(ctx):
+    ctx.run('docker build -t foo .')
+    ctx.run('docker run --rm -it foo')
