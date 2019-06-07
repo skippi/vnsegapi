@@ -1,6 +1,6 @@
 from typing import List
 
-from flask import Flask, request, jsonify
+from flask import Flask, abort, jsonify, request
 from flask_cors import CORS
 from pyvi import ViTokenizer
 
@@ -16,6 +16,9 @@ def make_app(test_config=None) -> Flask:
 
 def _api_tokens() -> str:
     string = request.args['str']
+    if (len(string) > 250):
+        abort(400)
+
     tokens = [] if not string else _tokenize(string)
     return jsonify(tokens)
 

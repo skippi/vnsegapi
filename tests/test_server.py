@@ -1,4 +1,5 @@
 import json
+from random import randrange
 from urllib.parse import quote
 
 import pytest
@@ -46,4 +47,9 @@ def test_tokens_handles_periods(client):
 
 def test_tokens_returns_status_400_given_no_str(client):
     res = client.get(f'/api/tokens')
+    assert res.status_code == 400
+
+
+def test_tokens_rejects_more_than_250_chars(client):
+    res = client.get(f'/api/tokens?str={"a" * randrange(251, 20000)}')
     assert res.status_code == 400
