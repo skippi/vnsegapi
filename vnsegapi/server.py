@@ -1,10 +1,14 @@
+"""This module provides the primary vnsegapi server."""
+
 from typing import List
 
 from flask import Flask, abort, jsonify, request
 from pyvi import ViTokenizer
 
 
-def make_app(test_config=None) -> Flask:
+def make_app() -> Flask:
+    """Returns a new vnsegapi server."""
+
     app = Flask(__name__)
     app.route("/api/tokens")(_api_tokens)
     return app
