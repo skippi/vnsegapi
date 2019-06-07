@@ -9,7 +9,6 @@ install:
   - poetry install --no-interaction
 
 script:
-  - poetry shell
-  - black --check .
-  - pylint
-  - pytest
+  - poetry run black --check .
+  - poetry run pylint vnsegapi
+  - poetry run pytest
