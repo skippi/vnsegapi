@@ -9,5 +9,6 @@ install:
 
 script:
   - poetry shell
-  - black -t py37 --check .
+  - black --check .
+  - pylint
   - pytest
