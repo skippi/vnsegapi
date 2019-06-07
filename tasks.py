@@ -9,6 +9,11 @@ def dev(ctx):
 
 
 @task
+def format(ctx):
+    ctx.run("poetry run black .")
+
+
+@task
 def docker_dev(ctx):
     ctx.run("docker build -t foo .")
     ctx.run("docker run --rm -it foo")
