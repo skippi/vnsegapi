@@ -6,13 +6,13 @@ from pyvi import ViTokenizer
 
 def make_app(test_config=None) -> Flask:
     app = Flask(__name__)
-    app.route('/api/tokens')(_api_tokens)
+    app.route("/api/tokens")(_api_tokens)
     return app
 
 
 def _api_tokens() -> str:
-    string = request.args['str']
-    if (len(string) > 250):
+    string = request.args["str"]
+    if len(string) > 250:
         abort(400)
 
     tokens = [] if not string else _tokenize(string)
@@ -22,4 +22,4 @@ def _api_tokens() -> str:
 def _tokenize(sentence: str) -> List[str]:
     pyvi_str = ViTokenizer.tokenize(sentence)
     underscore_tokens = pyvi_str.split()
-    return [t.replace('_', ' ') for t in underscore_tokens]
+    return [t.replace("_", " ") for t in underscore_tokens]

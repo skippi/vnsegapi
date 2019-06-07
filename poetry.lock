@@ -1,5 +1,13 @@
 [[package]]
 category = "dev"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+name = "appdirs"
+optional = false
+python-versions = "*"
+version = "1.4.3"
+
+[[package]]
+category = "dev"
 description = "Atomic file writes."
 name = "atomicwrites"
 optional = false
@@ -13,6 +21,20 @@ name = "attrs"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "19.1.0"
+
+[[package]]
+category = "dev"
+description = "The uncompromising code formatter."
+name = "black"
+optional = false
+python-versions = ">=3.6"
+version = "18.9b0"
+
+[package.dependencies]
+appdirs = "*"
+attrs = ">=17.4.0"
+click = ">=6.5"
+toml = ">=0.9.4"
 
 [[package]]
 category = "main"
@@ -213,6 +235,14 @@ python-versions = "*"
 version = "0.8.3"
 
 [[package]]
+category = "dev"
+description = "Python Library for Tom's Obvious, Minimal Language"
+name = "toml"
+optional = false
+python-versions = "*"
+version = "0.10.0"
+
+[[package]]
 category = "main"
 description = "Fast, Extensible Progress Meter"
 name = "tqdm"
@@ -237,12 +267,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.15.4"
 
 [metadata]
-content-hash = "2550f07b64f227784c7ab2a4e29b918437bdaa956cca63e854b1cdc53720a8db"
+content-hash = "25c0a9cf8a10b676c49c8302d060dfa542b972c7e6c1d326f2302a90c6c4cccb"
 python-versions = "^3.7"
 
 [metadata.hashes]
+appdirs = ["9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92", "d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"]
 atomicwrites = ["03472c30eb2c5d1ba9227e4c2ca66ab8287fbfbbda3888aa93dc2e28fc6811b4", "75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6"]
 attrs = ["69c0dbf2ed392de1cb5ec704444b08a5ef81680a61cb899dc08127123af36a79", "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"]
+black = ["817243426042db1d36617910df579a54f1afd659adb96fc5032fcf4b36209739", "e030a9a28f542debc08acceb273f228ac422798e5215ba2a791a6ddeaaca22a5"]
 click = ["2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13", "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"]
 colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
 flask = ["2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48", "a080b744b7e345ccfcbc77954861cb05b3c63786e93f2b3875e0913d44b43f05"]
@@ -263,6 +295,7 @@ scipy = ["03b1e0775edbe6a4c64effb05fff2ce1429b76d29d754aa5ee2d848b60033351", "09
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 sklearn-crfsuite = ["2f59aad3055e01a778a79a6352891cac04788e8b52688aa5bc8b11be7717861e", "6e9a42bc3de96941d5f7262335130955b8c380b1356147622368f385075705d9"]
 tabulate = ["8af07a39377cee1103a5c8b3330a421c2d99b9141e9cc5ddd2e3263fea416943"]
+toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
 tqdm = ["0a860bf2683fdbb4812fe539a6c22ea3f1777843ea985cb8c3807db448a0f7ab", "e288416eecd4df19d12407d0c913cbf77aa8009d7fddb18f632aded3bdbdda6b"]
 waitress = ["4e2a6e6fca56d6d3c279f68a2b2cc9b4798d834ea3c3a9db3e2b76b6d66f4526", "90fe750cd40b282fae877d3c866255d485de18e8a232e93de42ebd9fb750eebb"]
 werkzeug = ["865856ebb55c4dcd0630cdd8f3331a1847a819dda7e8c750d3db6f2aa6c0209c", "a0b915f0815982fb2a09161cb8f31708052d0951c3ba433ccc5e1aa276507ca6"]
