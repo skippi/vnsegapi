@@ -1,16 +1,12 @@
 from typing import List
 
 from flask import Flask, abort, jsonify, request
-from flask_cors import CORS
 from pyvi import ViTokenizer
 
 
 def make_app(test_config=None) -> Flask:
     app = Flask(__name__)
     app.route('/api/tokens')(_api_tokens)
-
-    CORS(app)
-
     return app
 
 
