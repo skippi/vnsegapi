@@ -83,6 +83,17 @@ itsdangerous = ">=0.24"
 
 [[package]]
 category = "dev"
+description = "A library for property based testing"
+name = "hypothesis"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "4.24.3"
+
+[package.dependencies]
+attrs = ">=16.0.0"
+
+[[package]]
+category = "dev"
 description = "Pythonic task execution"
 name = "invoke"
 optional = false
@@ -336,7 +347,7 @@ python-versions = "*"
 version = "1.11.1"
 
 [metadata]
-content-hash = "d6f75ceb724571623d7c965a99d9a60948cae109a645fc1403c26cc78eb2e1d4"
+content-hash = "72ba660581efe3c7fa7c3fcd073f18cb6ced30d667c08f2cec9153cba8a0a2fe"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -348,6 +359,7 @@ black = ["817243426042db1d36617910df579a54f1afd659adb96fc5032fcf4b36209739", "e0
 click = ["2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13", "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"]
 colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
 flask = ["2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48", "a080b744b7e345ccfcbc77954861cb05b3c63786e93f2b3875e0913d44b43f05"]
+hypothesis = ["51d159a6456f537decd811c6e62ce623966cc4748d5da0536b92eaca7006ff46", "a2daa11895e1b93a0d11efd15bbc95b56309233a39e0ab6981df207199ed6a04", "fd90a319f409f34a173156ca704d6c0c6c0bb30a2e43dbf26aced2c75569e5d5"]
 invoke = ["4f4de934b15c2276caa4fbc5a3b8a61c0eb0b234f2be1780d2b793321995c2d6", "dc492f8f17a0746e92081aec3f86ae0b4750bf41607ea2ad87e5a7b5705121b7", "eb6f9262d4d25b40330fb21d1e99bf0f85011ccc3526980f8a3eaedd4b43892e"]
 isort = ["c40744b6bc5162bbb39c1257fe298b7a393861d50978b565f3ccd9cb9de0182a", "f57abacd059dc3bd666258d1efb0377510a89777fda3e3274e3c01f7c03ae22d"]
 itsdangerous = ["321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19", "b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"]

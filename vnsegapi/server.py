@@ -3,8 +3,7 @@
 from typing import List
 
 from flask import Flask, abort, jsonify, request
-from pyvi import ViTokenizer
-
+from vnsegapi import parse
 
 def make_app() -> Flask:
     """Returns a new vnsegapi server."""
@@ -19,11 +18,5 @@ def _api_tokens() -> str:
     if len(string) > 250:
         abort(400)
 
-    tokens = [] if not string else _tokenize(string)
+    tokens = [] if not string else parse.tokenize(string)
     return jsonify(tokens)
-
-
-def _tokenize(sentence: str) -> List[str]:
-    pyvi_str = ViTokenizer.tokenize(sentence)
-    underscore_tokens = pyvi_str.split()
-    return [t.replace("_", " ") for t in underscore_tokens]
