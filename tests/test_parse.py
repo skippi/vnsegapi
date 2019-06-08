@@ -1,6 +1,6 @@
 import re
 
-from hypothesis import given
+from hypothesis import given, example
 from hypothesis.strategies import characters, text
 from vnsegapi.parse import tokenize
 
@@ -35,3 +35,8 @@ def test_tokenize_splits_periods(string):
     period_separated = re.split(r"(\.)", string)
     tokens = [token for splits in period_separated for token in tokenize(splits)]
     assert tokenize(string) == tokens
+
+
+@given(string=text())
+def test_tokenize_ignores_extra_whitespace(string: str):
+    assert tokenize(string) == tokenize(string.strip())
