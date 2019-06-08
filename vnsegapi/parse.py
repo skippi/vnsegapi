@@ -1,3 +1,5 @@
+"""This module implements functions for parsing Vietnamese."""
+
 import re
 from typing import List
 
@@ -5,6 +7,8 @@ from pyvi import ViTokenizer
 
 
 def tokenize(string: str) -> List[str]:
+    """Converts a Vietnamese string into its respective tokens."""
+
     if not string:
         return []
 
