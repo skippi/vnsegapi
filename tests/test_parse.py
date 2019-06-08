@@ -14,7 +14,7 @@ def test_tokenize_returns_empty_list_given_empty_string():
         alphabet=characters(whitelist_categories=["Lu", "Ll", "Lm"]), min_size=1
     )
 )
-def test_tokenize_returns_same_word_given_one_word(string):
+def test_tokenize_returns_same_word_given_one_word(string: str):
     assert tokenize(string) == [string]
 
 
@@ -31,7 +31,7 @@ def test_tokenize_can_tokenize_complex_sentences():
 
 
 @given(string=text())
-def test_tokenize_splits_periods(string):
+def test_tokenize_splits_periods(string: str):
     period_separated = re.split(r"(\.)", string)
     tokens = [token for splits in period_separated for token in tokenize(splits)]
     assert tokenize(string) == tokens

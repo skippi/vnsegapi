@@ -18,7 +18,7 @@ def client():
 
 
 @given(string=text(max_size=250))
-def test_tokens_identical_with_tokenize(client, string):
+def test_tokens_identical_with_tokenize(client, string: str):
     res = client.get(f"/api/tokens?str={quote(string)}")
     tokens = json.loads(res.data)
     assert tokens == parse.tokenize(string)
