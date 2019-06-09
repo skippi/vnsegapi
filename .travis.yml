@@ -7,8 +7,11 @@ install:
   - pip install poetry
   - poetry config settings.virtualenvs.create false
   - poetry install --no-interaction
+  - docker build -t vnsegapi .
+  - docker run -d --name vnsegapi vnsegapi
 
 script:
+  - docker ps | grep -q vnsegapi
   - poetry run black --check .
   - poetry run pylint vnsegapi
   - poetry run pytest

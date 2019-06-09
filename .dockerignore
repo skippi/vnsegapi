@@ -1,0 +1,11 @@
+__pycache__
+.dockerignore
+.hypothesis
+.pytest_cache
+.travis.yml
+.vscode
+Dockerfile
+README.md
+pytest.ini
+tasks.py
+tests
